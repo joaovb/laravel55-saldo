@@ -18,6 +18,9 @@
             @if ( $amount > 0)
             <a href="{{ route('balance.withdraw') }}" class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden></i>Sacar</a>
             @endif
+            @if ( $amount > 0)
+            <a href="{{ route('balance.transfer') }}" class="btn btn-info"><i class="fa fa-exchange" aria-hidden></i>Transferir</a>
+            @endif
         </div>
         <div class="box-body">
             @include('admin.includes.alerts')
@@ -25,7 +28,6 @@
                   <div class="small-box bg-green">
             <div class="inner">
               <h3>R$ {{ number_format($amount, 2, ',', '') }} </h3>
-              <?= phpversion() ?>
             </div>
 
             <div class="icon">
