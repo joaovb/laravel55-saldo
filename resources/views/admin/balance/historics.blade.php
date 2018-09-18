@@ -38,7 +38,7 @@
                     <th>Valor</th>
                     <th>Tipo</th>
                     <th>Data</th>
-                    <th>?Sender?</th>
+                    <th>Recebeu de</th>
                 </tr>
             </thead>
             <tbody>
@@ -59,8 +59,11 @@
                 @endforelse
             </tbody>
         </table>
-        {!! $historics->links() !!}
-
+        @if (isset($dataForm))
+            {!! $historics->appends($dataForm)->links() !!}
+        @else
+            {!! $historics->links() !!}
+        @endif
         </div>
     </div>
 @stop
